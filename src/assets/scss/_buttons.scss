@@ -1,0 +1,241 @@
+.btn {
+  outline: none !important;
+  border-radius: 40px;
+  border-width: 3px !important;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px,
+    rgba(0, 0, 0, 0.12) 0px 1px 5px 0px !important;
+  transition: all 0.5s ease !important;
+  font-weight: 500 !important;
+  color: $gray-700 !important;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-primary,
+  &-secondary,
+  &-info,
+  &-warning,
+  &-danger {
+    color: $white !important;
+  }
+
+  &-outline-primary {
+    color: $primary !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  &-outline-secondary {
+    color: $secondary !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  &-outline-info {
+    color: $info !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  &-outline-warning {
+    color: $warning !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  &-outline-danger {
+    color: $danger !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  &-light {
+    color: $gray-700 !important;
+    background-color: $gray-100 !important;
+    box-shadow: $box-shadow-1 !important;
+  }
+
+  &-link {
+    color: $secondary !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  &-outline-link {
+    color: $secondary !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  &-icon {
+    & > span {
+      display: flex;
+      position: relative;
+      padding-left: 1.65rem;
+      align-items: center;
+      justify-content: flex-start;
+      line-height: 0;
+      height: 24px;
+
+      & > svg {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -0.15rem;
+      }
+    }
+
+    &-loading {
+      & > span {
+        & > svg {
+          visibility: hidden;
+        }
+
+        &:before {
+          content: ' ';
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0rem;
+          width: 1.05rem;
+          height: 1.05rem;
+          border-radius: 50%;
+          border-top: 2px solid $white;
+          border-right: 2px solid transparent;
+          animation: spinner 0.6s linear infinite;
+        }
+      }
+    }
+  }
+
+  &-outline-default {
+    &.btn-icon {
+      &-loading {
+        & > span {
+          &:before {
+            border-top-color: $gray-700 !important;
+          }
+        }
+      }
+    }
+  }
+
+  &-outline-primary {
+    &.btn-icon {
+      &-loading {
+        & > span {
+          &:before {
+            border-top-color: $primary !important;
+          }
+        }
+      }
+    }
+  }
+
+  &-outline-info {
+    &.btn-icon {
+      &-loading {
+        & > span {
+          &:before {
+            border-top-color: $info !important;
+          }
+        }
+      }
+    }
+  }
+
+  &-outline-warning {
+    &.btn-icon {
+      &-loading {
+        & > span {
+          &:before {
+            border-top-color: $warning !important;
+          }
+        }
+      }
+    }
+  }
+
+  &-outline-danger {
+    &.btn-icon {
+      &-loading {
+        & > span {
+          &:before {
+            border-top-color: $danger !important;
+          }
+        }
+      }
+    }
+  }
+
+  &-outline-secondary,
+  &-outline-link {
+    &.btn-icon {
+      &-loading {
+        & > span {
+          &:before {
+            border-top-color: $secondary !important;
+          }
+        }
+      }
+    }
+  }
+
+  &.btn-sm {
+    &.btn-icon {
+      & > span {
+        padding-left: 1.25rem;
+        line-height: unset;
+        height: 20px;
+      }
+
+      &-loading {
+        & > span {
+          &:before {
+            width: 0.85rem;
+            height: 0.85rem;
+            left: 1px;
+          }
+        }
+      }
+    }
+  }
+
+  &.btn-lg {
+    &.btn-icon {
+      & > span {
+        padding-left: 2.25rem;
+        line-height: unset;
+      }
+
+      &-loading {
+        & > span {
+          &:before {
+            width: 1.4rem;
+            height: 1.4rem;
+            left: 3px;
+          }
+        }
+      }
+    }
+  }
+
+  &.btn-lg,
+  &.btn-group-lg {
+    font-size: 1rem !important;
+    height: 54px;
+  }
+
+  &:disabled,
+  &.disabled {
+    opacity: 0.4 !important;
+    box-shadow: $box-shadow-6 !important;
+  }
+}
+
+@keyframes spinner {
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}

@@ -1,0 +1,33 @@
+#page {
+
+  &--login,
+  &--forgot-password {
+    height    : 100%;
+    overflow-y: auto;
+
+    .page--wrapper {
+      @media (min-width: $xLargeScreen) {
+        grid-template-columns: 660px auto;
+      }
+
+      .login {
+        &_img {
+          height             : 100%;
+          background-color   : tint($primary, 75%);
+          background-repeat  : no-repeat;
+          background-size    : cover;
+          background-position: center center;
+        }
+      }
+    }
+  }
+
+  &--account {
+    .profile {
+      .sb-avatar {
+        margin    : -120px auto 40px auto;
+        box-shadow: $box-shadow-6;
+      }
+    }
+  }
+}

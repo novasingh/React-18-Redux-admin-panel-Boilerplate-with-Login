@@ -1,0 +1,305 @@
+label {
+  position        : absolute;
+  top             : 0;
+  left            : 0;
+  margin          : 0;
+  transform-origin: 0 0;
+  transform       : translate3d(0.5rem, 1.36rem, 0);
+  font-size       : 14px;
+  font-weight     : 500;
+  transition      : transform .2s, color .2s ease-in-out;
+  color           : $gray-400;
+  cursor          : text;
+  background-color: $white;
+  padding         : 0 0.5rem;
+}
+
+input {
+  appearance      : none;
+  background-color: $white;
+  padding         : 0.75rem 0.75rem 0.75rem;
+  border-radius   : $border-radius;
+  border          : 2px solid $gray-300;
+  font-size       : 16px;
+  width           : 100%;
+  outline         : none !important;
+  line-height     : 1;
+  font-weight     : 500;
+  color           : $gray-700;
+  transition      : all 0.2s ease;
+
+  &::placeholder {
+    color      : transparent !important;
+    user-select: none !important;
+  }
+
+  &:focus {
+    border-color    : tint($primary, 75%);
+    background-color: $white;
+  }
+
+  &.input {
+    &-clearable {
+      padding-right: 2rem !important;
+    }
+  }
+}
+
+input:focus+label {
+  color: tint($primary, 50%);
+}
+
+input:focus+label,
+input:not(:placeholder-shown)+label {
+  transform: translate3d(0.5rem, 0rem, 0) scale(0.75);
+}
+
+svg.input-clear-btn {
+  position  : absolute;
+  top       : calc(50% - 0.5rem);
+  right     : 0px;
+  transform : translate(4px, -50%);
+  color     : $gray-600;
+  cursor    : pointer;
+  opacity   : 0;
+  visibility: hidden;
+  transition: visibility 0s ease .2s, transform .2s ease, opacity .2s ease;
+}
+
+input:not(:placeholder-shown)+label+span.input-error+svg.input-clear-btn {
+  opacity   : 1;
+  visibility: visible;
+  transform : translate(-8px, -50%);
+  transition: visibility 0s ease 0s, transform .2s ease, opacity .2s ease;
+}
+
+.search-input__wrapper {
+  label {
+    position        : absolute;
+    top             : 0;
+    left            : 0;
+    margin          : 0;
+    transform-origin: 0 0;
+    transform       : translate3d(26px, 12px, 0);
+    font-size       : 14px;
+    font-weight     : 500;
+    transition      : transform .2s, color .2s ease-in-out, background-color .2s ease-in-out;
+    color           : $gray-400;
+    cursor          : text;
+    background-color: transparent;
+    padding         : 0px 4px;
+  }
+
+  svg.search-icon {
+    position : absolute;
+    top      : 50%;
+    left     : 10px;
+    transform: translateY(-50%);
+    color    : $gray-400;
+  }
+
+  svg.cancel-icon {
+    position  : absolute;
+    top       : 50%;
+    right     : 0px;
+    transform : translate(4px, -50%);
+    color     : $gray-600;
+    cursor    : pointer;
+    opacity   : 0;
+    visibility: hidden;
+    transition: visibility 0s ease .2s, transform .2s ease, opacity .2s ease;
+  }
+
+  input {
+    appearance      : none;
+    background-color: $white;
+    padding         : 0.75rem 1.75rem 0.75rem 1.75rem;
+    border-radius   : $border-radius;
+    border          : 2px solid $gray-300;
+    font-size       : 14px;
+    width           : 100%;
+    outline         : none !important;
+    line-height     : 1;
+    font-weight     : 600;
+    color           : $gray-700;
+    transition      : all 0.2s ease;
+
+    &::placeholder {
+      color      : transparent !important;
+      user-select: none !important;
+    }
+
+    &:focus {
+      border-color    : tint($primary, 75%);
+      background-color: $white;
+    }
+  }
+
+  input:focus+label {
+    color: tint($primary, 50%);
+  }
+
+  input:focus+label,
+  input:not(:placeholder-shown)+label {
+    background-color: $white;
+    transform       : translate3d(12px, -8px, 0) scale(0.85);
+  }
+
+  input:not(:placeholder-shown)+label+svg.cancel-icon {
+    visibility: visible;
+    opacity   : 1;
+    transform : translate(-8px, -50%);
+    transition: visibility 0s ease 0s, transform .2s ease, opacity .2s ease;
+  }
+}
+
+.input__select {
+  &>div {
+    border-radius: $border-radius;
+    border       : 2px solid $gray-300;
+    font-size    : 14px;
+    font-weight  : 600;
+    padding      : 0.3rem 0.4rem 0.3rem;
+    transition   : all 0.2s ease;
+    cursor       : pointer;
+    color        : $gray-700;
+    outline      : none !important;
+    box-shadow   : none !important;
+
+    &:hover {
+      border-color: tint($primary, 75%);
+    }
+
+    [class*=" css-"][class*="-placeholder"] {
+      color      : $gray-400 !important;
+      font-weight: 500 !important;
+      font-size  : 14px !important;
+    }
+
+    [class*=" css-"][class*="-Input"] {
+      color      : $gray-700 !important;
+      font-weight: 500 !important;
+    }
+  }
+}
+
+form {
+  .input__wrapper {
+    label {
+      position        : absolute;
+      top             : 0;
+      left            : 0;
+      margin          : 0;
+      transform-origin: 0 0;
+      transform       : translate3d(18px, 26px, 0) !important;
+      font-size       : 14px;
+      font-weight     : 500;
+      transition      : transform .2s, color .2s ease-in-out;
+      color           : $gray-400;
+      cursor          : text;
+      background-color: transparent !important;
+      padding         : 0 !important;
+    }
+
+    input,
+    select {
+      appearance      : none;
+      background-color: $gray-100;
+      padding         : 1.25rem 1rem 0.85rem;
+      border-radius   : $border-radius;
+      border          : 3px solid $gray-300;
+      font-size       : 14px;
+      width           : 100%;
+      outline         : none !important;
+      line-height     : 1;
+      font-weight     : 600;
+      color           : $gray-700;
+      transition      : all 0.2s ease, letter-spacing 0s;
+
+      &::placeholder {
+        color      : transparent !important;
+        user-select: none !important;
+      }
+
+      &:focus {
+        border-color    : tint($primary, 75%);
+        background-color: $gray-50;
+      }
+
+      &.disabled,
+      &:disabled {
+        color: $gray-400 !important;
+      }
+    }
+
+    input[type="password"] {
+      letter-spacing: 0.3rem;
+    }
+
+    button.btn--show-password {
+      top  : 1.35rem !important;
+      right: 0.25rem !important;
+      color: $gray-500 !important;
+    }
+
+    select+label {
+      transform: translate3d(18px, 24px, 0) !important;
+    }
+
+    input:focus+label,
+    select:focus+label {
+      color: tint($primary, 50%);
+    }
+
+    input:focus+label,
+    input:not(:placeholder-shown)+label,
+    select:focus+label,
+    select:valid+label {
+      transform: translate3d(18px, 13px, 0) scale(0.75) !important;
+    }
+
+    span.input-error {
+      position   : absolute;
+      color      : $danger;
+      font-size  : 12px;
+      font-weight: 500;
+      bottom     : 0;
+      left       : 3px;
+      display    : inline-block;
+      word-wrap  : normal;
+      width      : 100%;
+      height     : 20px;
+      line-height: 1;
+      opacity    : 0;
+      transform  : translateY(-10px);
+      visibility : hidden;
+      transition : visibility 0s, opacity 0.3s ease, transform 0.3s ease;
+
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+
+    &.error {
+      label {
+        color: tint($danger, 50%);
+      }
+
+      input,
+      select {
+        border-color: tint($danger, 75%);
+      }
+
+      input:focus+label,
+      select:focus+label {
+        color: tint($danger, 50%);
+      }
+
+      span.input-error {
+        opacity   : 1;
+        transform : translateY(0px);
+        visibility: visible;
+      }
+    }
+  }
+}
